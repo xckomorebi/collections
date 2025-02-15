@@ -13,9 +13,7 @@ func NewPriorityQueue[T Comparable[T]]() *PriorityQueue[T] {
 }
 
 func (pq *PriorityQueue[T]) swap(i, j int) {
-	tmp := pq.collection.data[i]
-	pq.collection.data[i] = pq.collection.data[j]
-	pq.collection.data[j] = tmp
+	pq.data[i], pq.data[j] = pq.data[j], pq.data[i]
 }
 
 func (pq *PriorityQueue[T]) up(i int) {
